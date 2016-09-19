@@ -1,6 +1,6 @@
 ## ASP.NET Core development environment using Docker
 
-This is a .NET environment ready for developmnet, with the CLI tools and using dotnet-watch for code changes.
+This is an ASP.NET Core environment ready for developmnet, with the CLI tools and using dotnet-watch for code changes.
 
 It also uses Docker Compose to start the ASP.NET container, along with a container with postgreSQL. 
 
