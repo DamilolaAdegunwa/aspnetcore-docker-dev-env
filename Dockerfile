@@ -13,17 +13,22 @@ RUN curl -o /tmp/packagescache.tar.gz https://dist.asp.net/packagecache/aspnetco
 ENV DOTNET_HOSTING_OPTIMIZATION_CACHE /packagescache
 
 # set up network
-EXPOSE 5000/tcp
-ENV ASPNETCORE_URLS http://*:5000
-#ENV ASPNETCORE_URLS http://+:80
+#Doesn't work on heroku: EXPOSE 5000/tcp
+#ENV ASPNETCORE_URLS http://*:5000
+ENV ASPNETCORE_URLS http://+:80
 
 # copy my app from current directory to target on container 
 COPY . /app 
 WORKDIR /app
  
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-ENTRYPOINT ["dotnet", "watch", "run"]
+# Build and run the app, with watcher, when the container spins up
+#RUN ["dotnet", "restore"]
+#RUN ["dotnet", "build"]
+#ENTRYPOINT ["dotnet", "watch", "run"]
+
+#required for heroku
+#CMD infinite-plateau-20150 --bind 0.0.0.0:$PORT wsgi 
+#CMD dotnet aspnetcore-dev.dll --server.urls=0.0.0.0:$PORT 
 
 # USAGE - build image, and expose ports, the current app folder: 
 # 		docker build -t mydemos:aspnetcorehelloworld .
