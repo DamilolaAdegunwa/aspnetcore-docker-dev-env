@@ -21,4 +21,4 @@ When the ASP.NET container spins up, it will map your current directory to a fol
 
 1. Then, you can change code in your app, and it will be updated in the container. So you use your IDE in your host as normal, while the container builds and runs the app. dotnet-watch will be running in the container, so the app rebuilds automatically in the container when code changes are saved. So after you save code changes, simply refresh your browser to see the changes.
 
-For more details on setting up an ASP.NET Core development environment using Docker, and building your own development environment container, see this [workshop section on Docker and ASP.NET](https://github.com/excellalabs/aspnetcore-workshop-kit).
+For more details on setting up an ASP.NET Core development environment using Docker, and building your own development environment container, see this [workshop section on Docker and ASP.NET](https://github.com/excellalabs/aspnetcore-workshop-kit/tree/master/MISC-Containers).
