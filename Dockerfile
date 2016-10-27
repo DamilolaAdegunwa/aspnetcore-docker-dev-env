@@ -23,9 +23,9 @@ COPY . /app
 WORKDIR /app
  
 # Build and run the app, with watcher, when the container spins up
-#RUN ["dotnet", "restore"]
-#RUN ["dotnet", "build"]
-#ENTRYPOINT ["dotnet", "watch", "run"]
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "build"]
+ENTRYPOINT ["dotnet", "watch", "run"]
 
 #required for heroku
 #CMD infinite-plateau-20150 --bind 0.0.0.0:$PORT wsgi 
