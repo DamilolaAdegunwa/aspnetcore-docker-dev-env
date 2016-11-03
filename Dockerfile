@@ -33,7 +33,7 @@ ENTRYPOINT ["dotnet", "watch", "run"]
 
 ######################################################################## 
 # USAGE - build image, and expose ports, the current app folder: 
-# 		docker build -t mydemos:aspnetcorehelloworld .
-#		docker run -i -p 8080:5000 -v $(pwd):/app -t mydemos:aspnetcorehelloworld 
+# 		docker build -t demo:aspHello .
+#		docker run -i -p 8080:5000 -v $(pwd):/app -t demo:aspHello 
 
 # REFERENCE: https://github.com/aspnet/aspnet-docker/blob/master/1.0.1/jessie/product/Dockerfile
