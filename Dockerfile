@@ -16,9 +16,8 @@ ENV DOTNET_HOSTING_OPTIMIZATION_CACHE /packagescache
 EXPOSE 5000/tcp
 
 ENV ASPNETCORE_URLS http://*:5000
-#ENV ASPNETCORE_URLS http://+:80
 
-# copy my app from current directory to target on container 
+# copy my app from current directory 
 COPY . /app 
 WORKDIR /app
  
