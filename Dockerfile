@@ -21,19 +21,13 @@ ENV ASPNETCORE_URLS http://*:5000
 COPY . /app 
 WORKDIR /app
  
-# Build and run the app, with watcher, when the container spins up
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-ENTRYPOINT ["dotnet", "watch", "run"]
-
-#required for heroku
-#CMD infinite-plateau-20150 --bind 0.0.0.0:$PORT wsgi 
-#CMD dotnet aspnetcore-dev.dll --server.urls=0.0.0.0:$PORT 
+# Build and run the app if present, with watcher, when the container spins up
+#RUN ["dotnet", "restore"]
+#RUN ["dotnet", "build"]
+#ENTRYPOINT ["dotnet", "watch", "run"]
 
 
 ######################################################################## 
 # USAGE - build image, and expose ports, the current app folder: 
 # 		docker build -t demo:aspHello .
-#		docker run -i -p 8080:5000 -v $(pwd):/app -t demo:aspHello 
-
-# REFERENCE: https://github.com/aspnet/aspnet-docker/blob/master/1.0.1/jessie/product/Dockerfile
+#		docker run -i -p 5000:5000 -v $(pwd):/app -t demo:aspHello 
